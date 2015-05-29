@@ -1,0 +1,24 @@
+{
+  "name": "spire-client",
+  "version": "0.1.0",
+  "description": "Spire REST API client library",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/spiresystems/spire-client"
+  },
+  "main": "spireapi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Spire Systems Inc.",
+  "license": "TBA",
+  "dependencies": {
+    "ampersand-events": "^1.1.1",
+    "ampersand-model": "^5.0.3",
+    "ampersand-rest-collection": "^4.0.0",
+    "lodash.assign": "^3.1.0"
+  },
+  "devDependencies": {
+    "domready": "^1.0.8"
+  }
+}
