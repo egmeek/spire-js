@@ -5,6 +5,7 @@
 
 var Events = require('ampersand-events');
 var assign = require('lodash.assign');
+var Decimal = require('big.js');
 
 
 var app = {
@@ -26,9 +27,11 @@ module.exports = app;
 
 // Populate the api here to prevent circular reference problems
 var customer = require('./models/customer');
+var salesorder = require('./models/salesorder');
 
 assign(app, {
+    Decimal: Decimal,
     customers: new customer.Customers(),
-
+    salesorders: new salesorder.SalesOrders()
 });
 
