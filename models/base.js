@@ -11,29 +11,27 @@ var api = require('../spireapi');
 
 
 var ajaxConfig = function() {
-    return {
-        headers: {
-            'Authorization': api.authorization()
-        }
+  return {
+    headers: {
+      'Authorization': api.authorization()
     }
+  }
 };
 
 var stateTypesMixin = {
-    dataTypes: {
-        decimal: {
-            set: function(val) {
-                return { type: 'decimal', val: new Decimal(val) };
-            },
-            compare: function(curval, newval, attr) {
-                if(typeof curval !== 'object' ||
-                        typeof newval !== 'object' ||
-                        curval.constructor !== newval.constructor)
-                    return false;
+  dataTypes: {
+    decimal: {
+      set: function(val) {
+        return { type: 'decimal', val: new Decimal(val) };
+      },
+      compare: function(curval, newval, attr) {
+        if(curval === undefined)
+          return false;
 
-                return curval.equals(newval);
-            }
-        }
+        return curval.eq(newval);
+      }
     }
+  }
 };
 
 
@@ -42,21 +40,21 @@ module.exports.Collection = Collection;
 
 
 module.exports.Model = Model.extend(lodashMixin, stateTypesMixin, {
-    ajaxConfig: ajaxConfig,
+  ajaxConfig: ajaxConfig,
 
-    url: function() {
-        return [api.url, this.endpoint, this.getId()].join('/');
-    }
+  url: function() {
+    return [api.url, this.endpoint, this.getId()].join('/');
+  }
 });
 
 module.exports.RESTCollection = RESTCollection.extend({
-    url: function() {
-        return api.url + '/' + this.endpoint;
-    },
+  url: function() {
+    return api.url + '/' + this.endpoint;
+  },
 
-    ajaxConfig: ajaxConfig,
+  ajaxConfig: ajaxConfig,
 
-    parse: function(res, options) {
-        return res['records'];
-    }
+  parse: function(response, options) {
+    return response.records;
+  }
 });
