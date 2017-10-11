@@ -22,12 +22,13 @@ var stateTypesMixin = {
   dataTypes: {
     decimal: {
       set: function(val) {
+        if(val === null || val === undefined)
+          return { type: 'decimal', val: val };
         return { type: 'decimal', val: new Decimal(val) };
       },
       compare: function(curval, newval, attr) {
-        if(curval === undefined)
+        if(curval === null || curval === undefined)
           return false;
-
         return curval.eq(newval);
       }
     }
