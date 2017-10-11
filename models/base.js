@@ -1,6 +1,6 @@
 'use strict';
 
-var Decimal = require('big.js');
+var Big = require('big.js');
 var Model = require('ampersand-model');
 var State = require('ampersand-state');
 var Collection = require('ampersand-collection');
@@ -17,6 +17,14 @@ var ajaxConfig = function() {
     }
   }
 };
+
+
+var Decimal = Big;
+Decimal.prototype.prec = 2;
+Decimal.prototype.format = function() {
+  return this.toFixed(this.prec).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
 
 var stateTypesMixin = {
   dataTypes: {
