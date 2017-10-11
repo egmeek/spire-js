@@ -44,6 +44,7 @@ var SalesOrder = base.Model.extend({
     orderDate: 'date',
     invoiceDate: 'date',
     requiredDate: 'date',
+    salespersonNo: 'string',
 
     subtotal: 'decimal',
     total: 'decimal',

@@ -10,6 +10,8 @@ var Customer = base.Model.extend({
     id: 'any',
     customerNo: 'string',
     name: 'string',
+    foregroundColor: 'any',
+    backgroundColor: 'any',
     status: {
       type: 'string',
 //    values: ['active', 'inactive', 'prospect']

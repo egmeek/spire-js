@@ -14,6 +14,8 @@ var app = {
   },
 
   authorization: function() {
+    if(this.auth_info === undefined)
+      throw 'API has not been initialized; see init()';
     return 'Basic ' + window.btoa(this.auth_info.join(':'));
   }
 };
