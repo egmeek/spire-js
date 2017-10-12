@@ -1,6 +1,5 @@
 'use strict';
 
-var Big = require('big.js');
 var Model = require('ampersand-model');
 var State = require('ampersand-state');
 var Collection = require('ampersand-collection');
@@ -8,6 +7,7 @@ var RESTCollection = require('ampersand-rest-collection');
 var lodashMixin = require('ampersand-collection-lodash-mixin');
 
 var api = require('../spireapi');
+var Decimal = require('../types').Decimal;
 
 
 var ajaxConfig = function() {
@@ -16,13 +16,6 @@ var ajaxConfig = function() {
       'Authorization': api.authorization()
     }
   }
-};
-
-
-var Decimal = Big;
-Decimal.prototype.prec = 2;
-Decimal.prototype.format = function() {
-  return this.toFixed(this.prec).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
 

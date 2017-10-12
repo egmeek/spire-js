@@ -2,7 +2,6 @@
 
 var Events = require('ampersand-events');
 var assign = require('lodash.assign');
-var Decimal = require('big.js');
 
 
 var app = {
@@ -29,7 +28,12 @@ var customer = require('./models/customer');
 var sales = require('./models/sales');
 
 assign(app, {
-  Decimal: Decimal,
+  types: {
+    Decimal: require('./types').Decimal
+  },
+  utils: {
+    formatDate: require('./utils').formatDate
+  },
   customer: customer,
   sales: sales
 });
