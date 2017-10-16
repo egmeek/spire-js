@@ -1,6 +1,6 @@
-# Spire REST API Client
+# Spire JavaScript Client
 
-This package provides convenient access to the Spire API from applications
+This package provides convenient access to the Spire REST API from applications
 written in JavaScript.
 
 ## Installation
@@ -63,29 +63,30 @@ spire.authenticate(company, username, password);
 
 The following collections are provided by this package:
 
-  | Description
-`spire.company.CompanyList` | Companies
-`spire.customer.CustomerList` | Customers
-`spire.employee.EmployeeList` | Employees
-`spire.gl.GLAccountList` | GL Accounts
-`spire.gl.GLTransactionList` | GL Transactions
-`spire.inventory.InventoryAdjustmentList` | Inventory Adjustments and Transfers
-`spire.inventory.InventoryList` | Inventory
-`spire.inventory.PriceMatrixList` | Price Matrices
-`spire.job.JobList` | Jobs
-`spire.paymentMethod.PaymentMethodList` | Payment Methods
-`spire.paymentTerms.PaymentTermsList` | Payment Methods
-`spire.payroll.TimecardList` | Timecards
-`spire.production.ProductionHistoryList` | Production History
-`spire.production.ProductionOrderList` | Production Orders
-`spire.production.ProductionTemplateList` | Production Templates
-`spire.purchasing.PurchaseHistoryList` | Purchase History
-`spire.purchasing.PurchaseOrderList` | Purchase Orders
-`spire.sales.SalesHistoryList` | Sales History
-`spire.sales.SalesOrderList` | Sales Orders
-`spire.salesperson.SalespersonList` | Salespeople
-`spire.territory.TerritoryList` | Territories
-`spire.vendor.VendorList` | Vendors
+|  | Description |
+| --- | --- |
+| `spire.company.CompanyList` | Companies |
+| `spire.customer.CustomerList` | Customers |
+| `spire.employee.EmployeeList` | Employees |
+| `spire.gl.GLAccountList` | GL Accounts |
+| `spire.gl.GLTransactionList` | GL Transactions |
+| `spire.inventory.InventoryAdjustmentList` | Inventory Adjustments and Transfers |
+| `spire.inventory.InventoryList` | Inventory |
+| `spire.inventory.PriceMatrixList` | Price Matrices |
+| `spire.job.JobList` | Jobs |
+| `spire.paymentMethod.PaymentMethodList` | Payment Methods |
+| `spire.paymentTerms.PaymentTermsList` | Payment Methods |
+| `spire.payroll.TimecardList` | Timecards |
+| `spire.production.ProductionHistoryList` | Production History |
+| `spire.production.ProductionOrderList` | Production Orders |
+| `spire.production.ProductionTemplateList` | Production Templates |
+| `spire.purchasing.PurchaseHistoryList` | Purchase History |
+| `spire.purchasing.PurchaseOrderList` | Purchase Orders |
+| `spire.sales.SalesHistoryList` | Sales History |
+| `spire.sales.SalesOrderList` | Sales Orders |
+| `spire.salesperson.SalespersonList` | Salespeople |
+| `spire.territory.TerritoryList` | Territories |
+| `spire.vendor.VendorList` | Vendors |
 
 Collections can be queried by providing an object to the `fetch()` method:
 
@@ -155,10 +156,11 @@ More information about working with collections can be found here:
 The create, read, update, delete (CRUD) functions are provided by the following
 methods on a Model instance:
 
-Method | Description
-`save` | Creates the object if new (`POST`), otherwise updates it (`PUT`)
-`destroy` | Attempts to delete the object (`DELETE`)
-`fetch` | Refreshes the object from the server
+| Method | Description
+| --- | --- |
+| `save` | Creates the object if new (`POST`), otherwise updates it (`PUT`) |
+| `destroy` | Attempts to delete the object (`DELETE`) |
+| `fetch` | Refreshes the object from the server |
 
 To load a specific object by ID:
 
