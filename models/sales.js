@@ -63,7 +63,7 @@ var SalesOrder = base.Model.extend({
 });
 
 
-var SalesOrders = base.RESTCollection.extend({
+var SalesOrderList = base.RESTCollection.extend({
   model: SalesOrder,
   endpoint: 'sales/orders/'
 });
@@ -71,5 +71,5 @@ var SalesOrders = base.RESTCollection.extend({
 
 module.exports = {
   SalesOrder: SalesOrder,
-  SalesOrders: SalesOrders
+  SalesOrderList: SalesOrderList
 };

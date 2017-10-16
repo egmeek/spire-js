@@ -1,12 +1,12 @@
 {
-  "name": "spire-client",
+  "name": "spire",
   "version": "0.1.0",
   "description": "Spire REST API client library",
   "repository": {
     "type": "git",
     "url": "git://github.com/spiresystems/spire-client"
   },
-  "main": "spireapi.js",
+  "main": "spire.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

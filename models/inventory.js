@@ -13,6 +13,14 @@ var Inventory = base.Model.extend({
   }
 });
 
+
+var InventoryList = base.RESTCollection.extend({
+  model: Inventory,
+  endpoint: 'inventory/items/'
+});
+
+
 module.exports = {
-  Inventory: Inventory
+  Inventory: Inventory,
+  InventoryList: InventoryList
 };

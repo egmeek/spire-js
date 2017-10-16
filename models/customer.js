@@ -5,7 +5,7 @@ var base = require('./base');
 var Address = require('./address').Address;
 
 var Customer = base.Model.extend({
-  endpoint: "customers",
+  endpoint: 'customers',
   props: {
     id: 'any',
     customerNo: 'string',
@@ -25,11 +25,14 @@ var Customer = base.Model.extend({
 });
 
 
-var Customers = base.RESTCollection.extend({
+var CustomerList = base.RESTCollection.extend({
   model: Customer,
-  endpoint: "customers/"
+  endpoint: 'customers/',
+  indexes: ['customerNo']
 });
 
 
-module.exports.Customer = Customer;
-module.exports.Customers = Customers;
+module.exports = {
+  Customer: Customer,
+  CustomerList: CustomerList
+};
