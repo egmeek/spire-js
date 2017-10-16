@@ -20,8 +20,8 @@ spire.connectServer(address, port);
 
 ### Listing Companies
 
-To return an array of companies that have been setup on your Spire server,
-create a `CompanyList` instance and call `fetch`:
+To list companies that have been setup on your Spire server, create a
+`CompanyList` instance and call `fetch`:
 
 ```javascript
 var companies = new spire.company.CompanyList();
@@ -33,17 +33,9 @@ companies.fetch({
 });
 ```
 
-A `Company` instance has the following attributes:
-
-|  | Returns
---- | ---
-| `name` | Returns the short name of the company. |
-| `description` | The long name of the company. |
-| `valid` | Returns whether this company can be connected to. Invalid companies generally have a configuration or database connection problem. |
-| `needs_upgrade` | Indicates whether or not this company needs a database upgrade to its current server version. If this is true requests to this company will fail with a precondition error until the company has been upgraded with the Spire system tray applicaiton. |
-| `disk_space` | Indicates the company's database size in bytes. |
-| `url` | The API root for this company's data. |
-| `locations` | Returns a JavaScript object with location code and name keys and values. |
+The `CompanyList` collection will be populated with instances of `Company` for
+each company that is configured on your server. See [Company](docs/company.md)
+for details about the attributes of a `Company` object.
 
 ### Authenticate a User
 
@@ -70,7 +62,7 @@ The following collections are provided by this package:
 | `spire.inventory.PriceMatrixList` | Price Matrices |
 | `spire.job.JobList` | Jobs |
 | `spire.paymentMethod.PaymentMethodList` | Payment Methods |
-| `spire.paymentTerms.PaymentTermsList` | Payment Methods |
+| `spire.paymentTerms.PaymentTermsList` | Payment Terms |
 | `spire.payroll.TimecardList` | Timecards |
 | `spire.production.ProductionHistoryList` | Production History |
 | `spire.production.ProductionOrderList` | Production Orders |
@@ -147,7 +139,34 @@ More information about working with collections can be found here:
 
 [ampersand-rest-collection](https://ampersandjs.com/docs/#ampersand-rest-collection)
 
-### Working With Objects
+### Working With Model Objects
+
+The following models are provided by this package:
+
+|  | Description |
+| --- | --- |
+| `spire.company.Company` | [Company](docs/company.md) |
+| `spire.customer.Customer` | Customer |
+| `spire.employee.Employee` | Employee |
+| `spire.gl.GLAccount` | GL Account |
+| `spire.gl.GLTransaction` | GL Transaction |
+| `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
+| `spire.inventory.Inventory` | Inventory |
+| `spire.inventory.PriceMatrix` | Price Matrix |
+| `spire.job.Job` | Job |
+| `spire.paymentMethod.PaymentMethod` | Payment Method |
+| `spire.paymentTerms.PaymentTerms` | Payment Terms |
+| `spire.payroll.Timecard` | Timecard |
+| `spire.production.ProductionHistory` | Production History |
+| `spire.production.ProductionOrder` | Production Order |
+| `spire.production.ProductionTemplate` | Production Template |
+| `spire.purchasing.PurchaseHistory` | Purchase History |
+| `spire.purchasing.PurchaseOrder` | Purchase Order |
+| `spire.sales.SalesHistory` | Sales History |
+| `spire.sales.SalesOrder` | Sales Order |
+| `spire.salesperson.Salesperson` | Salesperson |
+| `spire.territory.Territory` | Territory |
+| `spire.vendor.Vendor` | Vendor |
 
 The create, read, update, delete (CRUD) functions are provided by the following
 methods on a Model instance:
@@ -194,7 +213,7 @@ salesOrder.requiredDate = spire.utils.formatDate(new Date());
 salesOrder.save();
 ```
 
-More information about working with individual Model objects can be found here:
+More information about working with individual model objects can be found here:
 
 [ampersand-model](https://ampersandjs.com/docs/#ampersand-model)
 
@@ -218,7 +237,7 @@ Example:
 ```javascript
 var dec = new spire.types.Decimal('1021.25');
 dec.format();
-// $1,021.25
+// 1,021.25
 ```
 
 ### Utilities
