@@ -1,7 +1,7 @@
 {
   "name": "spire",
   "version": "0.1.0",
-  "description": "Spire REST API client library",
+  "description": "Spire JavaScript Client",
   "repository": {
     "type": "git",
     "url": "git://github.com/spiresystems/spire-js"
