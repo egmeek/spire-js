@@ -90,9 +90,10 @@ var salesOrders = new spire.sales.SalesOrderList();
 
 salesOrders.fetch({
   data: {
-    start: 0,             // Starting offset
-    limit: 100,           // Limit number of results
-    //q: 'search query',  // Search for keywords
+    start: 0,                // Starting offset
+    limit: 100,              // Limit number of results
+    //fields: 'id,orderNo',  // Comma separated list of fields to return (defaults to all fields)
+    //q: 'search query',     // Search for keywords
 
     // Filter results
     filter: JSON.stringify({
