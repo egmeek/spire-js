@@ -4,7 +4,7 @@
   "description": "Spire REST API client library",
   "repository": {
     "type": "git",
-    "url": "git://github.com/spiresystems/spire-client"
+    "url": "git://github.com/spiresystems/spire-js"
   },
   "main": "spire.js",
   "scripts": {
