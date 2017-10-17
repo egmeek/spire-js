@@ -179,30 +179,31 @@ The following models are provided by this package:
 
 |  | Description |
 | --- | --- |
-| `spire.company.Company` | [Company](docs/company.md) |
-| `spire.customer.Customer` | [Customer](docs/customer.md) |
-| `spire.employee.Employee` | [Employee](docs/employee.md) |
-| `spire.gl.GLAccount` | [GL Account](docs/gl.md#gl-account) |
-| `spire.gl.GLTransaction` | [GL Transaction](docs/gl.md#gl-transaction) |
+| [`spire.company.Company`](docs/company.md) | Spire Company |
+| [`spire.customer.Customer`](docs/customer.md) | Customer |
+| [`spire.employee.Employee`](docs/employee.md) | Employee |
+| [`spire.gl.GLAccount`](docs/gl.md#gl-account) | GL Account |
+| [`spire.gl.GLTransaction`](docs/gl.md#gl-transaction) | GL Transaction |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
-| `spire.inventory.Inventory` | [Inventory](docs/inventory.md#inventory) |
-| `spire.inventory.PriceMatrix` | [Price Matrix](docs/inventory.md#price-matrix) |
-| `spire.paymentMethod.PaymentMethod` | [Payment Method](docs/payment_method.md) |
-| `spire.paymentTerms.PaymentTerms` | [Payment Terms](docs/payment_terms.md) |
-| `spire.payroll.Timecard` | [Timecard](docs/payroll.md#timecard) |
+| [`spire.inventory.Inventory`](docs/inventory.md#inventory) | Inventory |
+| [`spire.inventory.PriceMatrix`](docs/inventory.md#price-matrix) | Price Matrix |
+| [`spire.paymentMethod.PaymentMethod`](docs/payment_method.md) | Payment Method |
+| [`spire.paymentTerms.PaymentTerms`](docs/payment_terms.md) | Payment Terms |
+| [`spire.payroll.Timecard`](docs/payroll.md#timecard) | Timecard |
+| [`spire.payroll.TimecardEntry`](docs/payroll.md#timecard-entry) | Timecard Entry |
 | `spire.production.ProductionHistory` | Production History |
 | `spire.production.ProductionOrder` | Production Order |
 | `spire.production.ProductionTemplate` | Production Template |
 | `spire.purchasing.PurchaseHistory` | Purchase History |
-| `spire.purchasing.PurchaseOrder` | Purchase Order |
-| `spire.purchasing.PurchaseOrderItem` | Purchase Order Item |
+| [`spire.purchasing.PurchaseOrder`](docs/purchasing.md#purchase-order) | Purchase Order |
+| [`spire.purchasing.PurchaseOrderItem`](docs/purchasing.md#purchase-order-item) | Purchase Order Item |
 | `spire.sales.SalesHistory` | Sales History |
-| `spire.sales.SalesOrder` | [Sales Order](docs/sales.md#sales-order) |
-| `spire.sales.SalesOrderItem` | [Sales Order Item](docs/sales.md#sales-order-item) |
-| `spire.sales.SalesOrderPayment` | [Sales Order Payment](docs/sales.md#sales-order-payment) |
-| `spire.salesperson.Salesperson` | [Salesperson](docs/salesperson.md) |
-| `spire.territory.Territory` | [Territory](docs/territory.md) |
-| `spire.vendor.Vendor` | [Vendor](docs/vendor.md) |
+| [`spire.sales.SalesOrder`](docs/sales.md#sales-order) | Sales Order |
+| [`spire.sales.SalesOrderItem`](docs/sales.md#sales-order-item) | Sales Order Item |
+| [`spire.sales.SalesOrderPayment`](docs/sales.md#sales-order-payment) | Sales Order Payment |
+| [`spire.salesperson.Salesperson`](docs/salesperson.md) | Salesperson |
+| [`spire.territory.Territory`](docs/territory.md) | Territory |
+| [`spire.vendor.Vendor`](docs/vendor.md) | Vendor |
 
 The create, read, update, delete (CRUD) functions are provided by the following
 methods on a Model instance:
