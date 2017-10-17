@@ -48,7 +48,6 @@ An `Inventory` model instance has the following attributes:
 | `modified` | UTC timestamp indicating the time the inventory was last modified. |
 | `modifiedBy` | String indicating the initials of the user that last modified this inventory. |
 
-
 # Price Matrix
 
 A `PriceMatrix` model instance has the following properties:
@@ -72,3 +71,19 @@ A `PriceMatrix` model instance has the following properties:
 | `createdBy` | String indicating the initials of the user that created this
 | `modified` | UTC timestamp indicating the time the price rule was last modified. |
 | `modifiedBy` | String indicating the initials of the user that last modified this price rule. |
+
+# Serial Number
+
+A `SerialNumber` model instance has the following properties:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the serial number or `null` if this is a new
+serial number |
+| `serialNumber` | Serial number string |
+| `whse` | Warehouse string |
+| `partNo` | Part no string |
+| `committedQty` | Decimal indicating number of this serial committed (should not be more than one for serial number, but can be for lot numbers) |
+| `unitCost` | Decimal indicating the unit cost for this serial in stock unit of measure |
+| `sellPrice` | Decimal indicating the serialized sell price for this serial |
+| `expiryDate` | Date indicating best before for this serial |
