@@ -49,6 +49,7 @@ var inventory = require('./models/inventory');
 var paymentMethod = require('./models/payment_method.js');
 var paymentTerms = require('./models/payment_terms.js');
 var payroll = require('./models/payroll');
+var purchasing = require('./models/purchasing');
 var sales = require('./models/sales');
 var salesperson = require('./models/salesperson');
 var territory = require('./models/territory');
@@ -60,9 +61,10 @@ assign(app, {
   employee: employee,
   gl: gl,
   inventory: inventory,
-  payroll: payroll,
   paymentMethod: paymentMethod,
   paymentTerms: paymentTerms,
+  payroll: payroll,
+  purchasing: purchasing,
   sales: sales,
   salesperson: salesperson,
   territory: territory,

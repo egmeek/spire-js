@@ -195,6 +195,7 @@ The following models are provided by this package:
 | `spire.production.ProductionTemplate` | Production Template |
 | `spire.purchasing.PurchaseHistory` | Purchase History |
 | `spire.purchasing.PurchaseOrder` | Purchase Order |
+| `spire.purchasing.PurchaseOrderItem` | Purchase Order Item |
 | `spire.sales.SalesHistory` | Sales History |
 | `spire.sales.SalesOrder` | [Sales Order](docs/sales.md#sales-order) |
 | `spire.sales.SalesOrderItem` | [Sales Order Item](docs/sales.md#sales-order-item) |

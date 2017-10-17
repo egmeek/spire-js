@@ -126,5 +126,6 @@ var SalesOrderList = base.RESTCollection.extend({
 module.exports = {
   SalesOrder: SalesOrder,
   SalesOrderList: SalesOrderList,
+  SalesOrderItem: SalesOrderItem,
   SalesOrderPayment: SalesOrderPayment
 };
