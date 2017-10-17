@@ -21,7 +21,7 @@ A `GLAccount` object has the following attributes:
 | `allocation` | Boolean indicating if this account is an allocation account |
 | `segments` | Object describing segment structure of this account if GL chart is segmented |
 
-## GL transaction
+## GL Transaction
 
 |   | Returns |
 | --- | --- |
@@ -41,9 +41,9 @@ A `GLAccount` object has the following attributes:
 | `reconcileDate` | Date transaction was reconciled with statement |
 | `reconcileFlag` | Boolean indication if this transaction has been reconciled |
 | `whereFrom` | String indicating module that created this transaction |
-| `memoWho` | String |
-| `memoKey` | String |
-| `memoTran` | String |
+| `memoWho` | String indicating type of transaction |
+| `memoKey` | String indicating the user-facing key of the object that created this transaction |
+| `memoTran` | Invoice or PO number that created this transaction |
 | `baseDebitAmount` | Decimal debit amount in base currency |
 | `baseCreditAmount` | Decimal credit amount in base currency |
 | `foreignDebitAmount` | Decimal debit amount in foreign currency |
