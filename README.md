@@ -198,7 +198,8 @@ The following models are provided by this package:
 | [`spire.purchasing.PurchaseHistory`](docs/purchasing.md#purchase-history) | Purchase History |
 | [`spire.purchasing.PurchaseOrder`](docs/purchasing.md#purchase-order) | Purchase Order |
 | [`spire.purchasing.PurchaseOrderItem`](docs/purchasing.md#purchase-order-item) | Purchase Order Item |
-| `spire.sales.SalesHistory` | Sales History |
+| [`spire.sales.SalesHistory`](docs/sales.md#sales-history) | Sales History |
+| [`spire.sales.SalesHistoryItem`](docs/sales.md#sales-history-item) | Sales History Item |
 | [`spire.sales.SalesOrder`](docs/sales.md#sales-order) | Sales Order |
 | [`spire.sales.SalesOrderItem`](docs/sales.md#sales-order-item) | Sales Order Item |
 | [`spire.sales.SalesOrderPayment`](docs/sales.md#sales-order-payment) | Sales Order Payment |
