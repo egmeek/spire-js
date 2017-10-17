@@ -196,7 +196,9 @@ The following models are provided by this package:
 | `spire.purchasing.PurchaseHistory` | Purchase History |
 | `spire.purchasing.PurchaseOrder` | Purchase Order |
 | `spire.sales.SalesHistory` | Sales History |
-| `spire.sales.SalesOrder` | Sales Order |
+| `spire.sales.SalesOrder` | [Sales Order](docs/sales.md#sales-order) |
+| `spire.sales.SalesOrderItem` | [Sales Order Item](docs/sales.md#sales-order-item) |
+| `spire.sales.SalesOrderPayment` | [Sales Order Payment](docs/sales.md#sales-order-payment) |
 | `spire.salesperson.Salesperson` | [Salesperson](docs/salesperson.md) |
 | `spire.territory.Territory` | [Territory](docs/territory.md) |
 | `spire.vendor.Vendor` | [Vendor](docs/vendor.md) |
