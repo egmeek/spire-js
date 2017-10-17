@@ -2,6 +2,7 @@
 
 var isObject = require('lodash/isObject');
 var assign = require('lodash/assign');
+var isDate = require('lodash/isDate');
 var Model = require('ampersand-model');
 var State = require('ampersand-state');
 var Collection = require('ampersand-collection');
@@ -23,6 +24,43 @@ var ajaxConfig = function() {
 
 var stateTypesMixin = {
   dataTypes: {
+    date: {
+      set: function (newVal) {
+        var newType;
+        if (newVal == null) {
+          newType = typeof null;
+        } else if (!isDate(newVal)) {
+          var err = null;
+          var dateVal = new Date(newVal);
+          if (isNaN(dateVal)) {
+            // If the newVal cant be parsed, then try parseInt first
+            dateVal = new Date(parseInt(newVal, 10));
+            if (isNaN(dateVal)) err = true;
+          }
+          newVal = dateVal;
+          newType = 'date';
+          if (err) {
+            newType = typeof newVal;
+          }
+        } else {
+          newType = 'date';
+          newVal = newVal;
+        }
+
+        return {
+          val: newVal,
+          type: newType
+        };
+      },
+      get: function (val) {
+        if (val == null) { return val; }
+        return new Date(val);
+      },
+      'default': function () {
+        return new Date();
+      }
+    },
+
     decimal: {
       set: function(val) {
         if(val === null || val === undefined)
