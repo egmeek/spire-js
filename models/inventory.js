@@ -20,6 +20,7 @@ var Inventory = base.Model.extend({
       values: [0, 1, 2]
     },
     hold: 'boolean',
+    serialized: 'boolean',
     availableQty: 'decimal',
     onHandQty: 'decimal',
     backorderQty: 'decimal',
@@ -98,9 +99,30 @@ var PriceMatrixList = base.RESTCollection.extend({
 });
 
 
+var SerialNumber = base.State.extend({
+  props: {
+    id: 'any',
+    serialNumber: 'string',
+    whse: 'string',
+    partNo: 'string',
+    committedQty: 'decimal',
+    unitCost: 'decimal',
+    sellPrice: 'decimal',
+    expiryDate: 'date'
+  }
+});
+
+
+var SerialNumberList = base.Collection.extend({
+  model: SerialNumber,
+  indexes: ['serialNumber']
+});
+
+
 module.exports = {
   Inventory: Inventory,
   InventoryList: InventoryList,
   PriceMatrix: PriceMatrix,
-  PriceMatrixList: PriceMatrixList
+  PriceMatrixList: PriceMatrixList,
+  SerialNumberList: SerialNumberList
 };

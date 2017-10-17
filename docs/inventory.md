@@ -11,6 +11,7 @@ An `Inventory` model instance has the following attributes:
 | `type` | Inventory type: `N` normal, `V` non-physical, `M` manufactured, `K` kitted, `R` raw material. |
 | `status` | Inventory status: `0` active, `1` on hold (deprecated), `2` inactive. |
 | `hold` | Boolean indicating whether inventory is on hold. |
+| `serialized` | Boolean indicating whether inventory is serialized |
 | `availableQty` | Decimal indicating quantity of inventory available for sale in stock unit of measure. |
 | `onHandQty` | Decimal indicating quantity of inventory on hand in stock unit of measure. |
 | `backorderQty` | Decimal indicating quantity of inventory on backorder in stock unit of measure. |
