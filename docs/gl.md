@@ -2,7 +2,7 @@
 
 ## GL Account
 
-A `GLAccount` object has the following attributes:
+A `GLAccount` model instance has the following attributes:
 
 |   | Returns |
 | --- | --- |
@@ -23,6 +23,8 @@ A `GLAccount` object has the following attributes:
 
 ## GL Transaction
 
+A `GLTransaction` model instance has the following attributes:
+
 |   | Returns |
 | --- | --- |
 | `id` | Integer primary key of the GL transaction |
@@ -31,6 +33,8 @@ A `GLAccount` object has the following attributes:
 | `items` | Collection of [`GLTransactionItem`](#gl-transaction-item) instances |
 
 ## GL Transaction Item
+
+A `GLTransactionItem` model instance has the following attributes:
 
 |   | Returns |
 | --- | --- |
