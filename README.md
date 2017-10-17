@@ -185,12 +185,11 @@ The following models are provided by this package:
 | `spire.gl.GLAccount` | [GL Account](docs/gl.md#gl-account) |
 | `spire.gl.GLTransaction` | [GL Transaction](docs/gl.md#gl-transaction) |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
-| `spire.inventory.Inventory` | [Inventory](docs/inventory.md) |
-| `spire.inventory.PriceMatrix` | Price Matrix |
-| `spire.job.Job` | Job |
+| `spire.inventory.Inventory` | [Inventory](docs/inventory.md#inventory) |
+| `spire.inventory.PriceMatrix` | [Price Matrix](docs/inventory.md#price-matrix) |
 | `spire.paymentMethod.PaymentMethod` | [Payment Method](docs/payment_method.md) |
 | `spire.paymentTerms.PaymentTerms` | [Payment Terms](docs/payment_terms.md) |
-| `spire.payroll.Timecard` | Timecard |
+| `spire.payroll.Timecard` | [Timecard](docs/payroll.md#timecard) |
 | `spire.production.ProductionHistory` | Production History |
 | `spire.production.ProductionOrder` | Production Order |
 | `spire.production.ProductionTemplate` | Production Template |

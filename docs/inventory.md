@@ -46,3 +46,28 @@ An `Inventory` model instance has the following attributes:
 | `createdBy` | String indicating the initials of the user that created this
 | `modified` | UTC timestamp indicating the time the inventory was last modified. |
 | `modifiedBy` | String indicating the initials of the user that last modified this inventory. |
+
+
+# Price Matrix
+
+A `PriceMatrix` model instance has the following properties:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the price matrix record or `null` if this is a new record |
+| `startDate` | Date indicating when this price rule begins |
+| `endDate` | Date indicating when this price rule ends |
+| `customerNo` | String indicating customer criteria |
+| `whse` | Warehouse criteria |
+| `partNo` | Inventory part no criteria |
+| `amountType` | Method price rule uses to apply changes: `P` use specied price, `D` use specified discount, `M` use specified margin amount |
+| `productCode` | String indicating inventory group |
+| `minimumQty` | Decimal indicating the minimum quantity of inventory that must be ordered in order for this rule to apply |
+| `promoCode` | String indicating a specific promotion code to associate with this price rule |
+| `amount` | Decimal amount used when price rule is based on a specified amount |
+| `margin` | Decimal margin used when price rule is based on margin |
+| `vendorNo` | String indicating vendor criteria |
+| `created` | UTC timestamp indicating the time the price rule was created. |
+| `createdBy` | String indicating the initials of the user that created this
+| `modified` | UTC timestamp indicating the time the price rule was last modified. |
+| `modifiedBy` | String indicating the initials of the user that last modified this price rule. |

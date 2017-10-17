@@ -65,7 +65,42 @@ var InventoryList = base.RESTCollection.extend({
 });
 
 
+var PriceMatrix = base.Model.extend({
+  endpoint: 'inventory/price_matrix',
+  props: {
+    id: 'any',
+    startDate: 'date',
+    endDate: 'date',
+    customerNo: 'string',
+    whse: 'string',
+    partNo: 'string',
+    amountType: {
+      type: 'string',
+      values: ['P', 'D', 'M']
+    },
+    productCode: 'string',
+    minimumQty: 'decimal',
+    promoCode: 'string',
+    amount: 'decimal',
+    margin: 'decimal',
+    vendorNo: 'string',
+    created: 'date',
+    createdBy: 'string',
+    modified: 'date',
+    modifiedBy: 'string'
+  }
+});
+
+
+var PriceMatrixList = base.RESTCollection.extend({
+  model: PriceMatrix,
+  endpoint: 'inventory/price_matrix/'
+});
+
+
 module.exports = {
   Inventory: Inventory,
-  InventoryList: InventoryList
+  InventoryList: InventoryList,
+  PriceMatrix: PriceMatrix,
+  PriceMatrixList: PriceMatrixList
 };
