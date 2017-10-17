@@ -65,7 +65,36 @@ module.exports.Model = Model.extend(lodashMixin, stateTypesMixin, {
     return [api.url, this.endpoint, this.getId()].join('/');
   },
 
-  save: function (key, val, options) {
+  destroy: function (options) {
+    options = options ? clone(options) : {};
+    var model = this;
+    var success = options.success;
+
+    var destroy = function () {
+      model.trigger('destroy', model, model.collection, options);
+    };
+
+    options.success = function (resp) {
+      if (options.wait || model.isNew()) destroy();
+      // XXX: Clear ID on successful delete
+      model.id = undefined;
+      if (success) success(model, resp, options);
+      if (!model.isNew()) model.trigger('sync', model, resp, options);
+    };
+
+    if (this.isNew()) {
+      options.success();
+      return false;
+    }
+    wrapError(this, options);
+
+    var sync = this.sync('delete', this, options);
+    options.xhr = sync;
+    if (!options.wait) destroy();
+    return sync;
+  },
+
+  save: function(key, val, options) {
     var attrs, method;
 
     // Handle both `"key", value` and `{key: value}` -style arguments.

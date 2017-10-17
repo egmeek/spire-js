@@ -3,24 +3,50 @@
 var base = require('./base');
 
 var Address = require('./address').Address;
+var AddressList = require('./address').AddressList;
+var PaymentTerms = require('./payment_terms').PaymentTerms;
+
 
 var Customer = base.Model.extend({
   endpoint: 'customers',
   props: {
     id: 'any',
     customerNo: 'string',
+    code: 'string',
     name: 'string',
     foregroundColor: 'any',
     backgroundColor: 'any',
     status: {
       type: 'string',
-//    values: ['active', 'inactive', 'prospect']
+      values: ['A', 'I', 'P']
     },
-    hold: 'boolean'
+    hold: 'boolean',
+    reference: 'string',
+    applyFinanceCharges: 'boolean',
+    creditType: {
+      type: 'any',
+      values: [0, 1, 2]
+    },
+    creditLimit: 'decimal',
+    creditBalance: 'decimal',
+    currency: 'string',
+    userDef1: 'string',
+    userDef2: 'string',
+    discount: 'decimal',
+    receivableAccount: 'string',
+    defaultShipTo: 'string',
+    upload: 'boolean',
+    lastModified: 'date',
+    created: 'date',
+    createdBy: 'string',
+    modified: 'date',
+    modifiedBy: 'string'
   },
 
   children: {
-    address: Address
+    address: Address,
+    //shippingAddresses: AddressList,
+    paymentTerms: PaymentTerms
   }
 });
 
@@ -28,7 +54,7 @@ var Customer = base.Model.extend({
 var CustomerList = base.RESTCollection.extend({
   model: Customer,
   endpoint: 'customers/',
-  indexes: ['customerNo']
+  indexes: ['customerNo', 'code']
 });
 
 

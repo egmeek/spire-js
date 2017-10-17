@@ -1,9 +1,9 @@
 # Company
 
-A `Company` instance has the following attributes:
+A `Company` model instances are read-only and have the following attributes:
 
-|  | Returns
---- | ---
+|   | Returns
+| --- | --- |
 | `name` | Returns the short name of the company. |
 | `description` | The long name of the company. |
 | `valid` | Returns whether this company can be connected to. Invalid companies generally have a configuration or database connection problem. |

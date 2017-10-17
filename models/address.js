@@ -1,6 +1,9 @@
 'use strict';
 
 var base = require('./base');
+var Salesperson = require('./salesperson').Salesperson;
+var Territory = require('./territory').Territory;
+
 
 var Phone = base.State.extend({
   props: {
@@ -25,6 +28,13 @@ var ContactsCollection = base.Collection.extend({
 
 var Address = base.State.extend({
   props: {
+    id: 'any',
+    type: {
+      type: 'string',
+      values: ['B', 'S']
+    },
+    shipId: 'string',
+    name: 'string',
     streetAddress: 'string',
     city: 'string',
     provState: 'string',
@@ -36,7 +46,9 @@ var Address = base.State.extend({
 
   children: {
     phone: Phone,
-    fax: Phone
+    fax: Phone,
+    salesperson: Salesperson,
+    territory: Territory
   },
 
   collections: {
@@ -45,6 +57,12 @@ var Address = base.State.extend({
 });
 
 
+var AddressList = base.Collection.extend({
+  model: Address
+});
+
+
 module.exports = {
-  Address: Address
+  Address: Address,
+  AddressList: AddressList
 };

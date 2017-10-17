@@ -1,0 +1,48 @@
+# Inventory
+
+An `Inventory` model instance has the following attributes:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the inventory or `null` if this is a new inventory item. |
+| `whse` | Warehouse inventory belongs to. |
+| `partNo` | Inventory user-facing identifier (along with whse). |
+| `description` | Inventory short description. |
+| `type` | Inventory type: `N` normal, `V` non-physical, `M` manufactured, `K` kitted, `R` raw material. |
+| `status` | Inventory status: `0` active, `1` on hold (deprecated), `2` inactive. |
+| `hold` | Boolean indicating whether inventory is on hold. |
+| `availableQty` | Decimal indicating quantity of inventory available for sale in stock unit of measure. |
+| `onHandQty` | Decimal indicating quantity of inventory on hand in stock unit of measure. |
+| `backorderQty` | Decimal indicating quantity of inventory on backorder in stock unit of measure. |
+| `committedQty` | Decimal indicating quantity of inventory committed on orders in stock unit of measure. |
+| `onPurchaseQty` | Decimal indicating quantity of inventory on issued purchase orders. |
+| `currentCost` | Decimal indicating current cost of inventory (used as default cost on new purchase order). |
+| `averageCost` | Decimal indicating average cost of inventory (usually this is the cost used in accounting operations, depending on the company's inventory costing method setting). |
+| `standardCost` | Decimal indicating the standard cost of inventory. |
+| `groupNo` | String indicating the inventory group. |
+| `salesDept` | Integer referencing the associated sales department. |
+| `userDef1` | Inventory's user-defined string value |
+| `userDef2` | Inventory's user-defined decimal value |
+| `foregroundColor` | Base 10 integer indicating a custom RGBA text color. |
+| `backgroundColor` | Base 10 integer indicating a custom RGBA background color. |
+| `discountable` | Boolean indicating whether to apply price discounts. |
+| `weight` | Decimal indicating weight of inventory |
+| `packSize` | Decimal indicating pack size of inventory |
+| `unitOfMeasures` | Object describing inventory unit of measures |
+| `buyMeasureCode` | String indicating inventory's purchasing unit of measure |
+| `stockMeasureCode` | String indicating inventory's stock unit of measure |
+| `sellMeasureCode` | String indicating inventory's sales unit of measure |
+| `allowBackorders` | Boolean indicating whether to allow this inventory to be backordered. |
+| `allowReturns` | Boolean indicating whether to allow this inventory to be returned. |
+| `dutyPct` | Decimal indicating the default duty percentage to apply during purchase receipts. |
+| `freightPct` | Decimal indicating the default freight percentage to apply during purchase receipts. |
+| `manufactureCountry` | String indicating country where inventory was manufactured. |
+| `harmonizedCode` | String indicating inventory harmonized code. |
+| `extendedDescription` | Long description of inventory |
+| `defaultExpiryDate` | Date indicating the default expiry date of this inventory |
+| `upload` | Boolean indicating whether or not this inventory should be uploaded to a web store or third-party integration. |
+| `lastModified` | UTC time the inventory was last modified including modifications made by the system that would not otherwise be captured by the `modified` field. This field should be used for updating any external caches. |
+| `created` | UTC timestamp indicating the time the inventory was created. |
+| `createdBy` | String indicating the initials of the user that created this
+| `modified` | UTC timestamp indicating the time the inventory was last modified. |
+| `modifiedBy` | String indicating the initials of the user that last modified this inventory. |

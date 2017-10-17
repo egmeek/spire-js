@@ -33,7 +33,7 @@ var app = {
   authorization: function() {
     if(this.auth_info === undefined)
       return;
-    return 'Basic ' + window.btoa(this.auth_info.join(':'));
+    return 'Basic ' + btoa(this.auth_info.join(':'));
   }
 };
 
@@ -41,19 +41,34 @@ Events.createEmitter(app);
 module.exports = app;
 
 
-// Populate the api here to prevent circular reference problems
 var company = require('./models/company');
 var customer = require('./models/customer');
+var employee = require('./models/employee');
+var inventory = require('./models/inventory');
+var paymentMethod = require('./models/payment_method.js');
+var paymentTerms = require('./models/payment_terms.js');
 var sales = require('./models/sales');
+var salesperson = require('./models/salesperson');
+var territory = require('./models/territory');
+var vendor = require('./models/vendor');
 
 assign(app, {
+  company: company,
+  customer: customer,
+  employee: employee,
+  inventory: inventory,
+  paymentMethod: paymentMethod,
+  paymentTerms: paymentTerms,
+  sales: sales,
+  salesperson: salesperson,
+  territory: territory,
+  vendor: vendor,
+
   types: {
     Decimal: require('./types').Decimal
   },
+
   utils: {
     formatDate: require('./utils').formatDate
-  },
-  company: company,
-  customer: customer,
-  sales: sales
+  }
 });

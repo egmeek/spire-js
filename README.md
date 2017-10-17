@@ -11,11 +11,31 @@ Install the package with:
 
 ## Usage
 
-### Connect to Your Spire Server
+### Import the Spire package
 
 ```javascript
 var spire = require('spire');
-spire.connectServer(address, port);
+```
+
+Or if your JavaScript environment supports ES6:
+
+```javascript
+import spire from 'spire';
+```
+
+### Connect to Your Spire Server
+
+Supply a hostname or IP address for your Spire server.
+
+```javascript
+spire.connectServer(address);
+```
+
+If your Spire Server is running on a different port than the default (10880) you
+can pass the port to `connectServer`:
+
+```javascript
+spire.connectServer('127.0.0.1', 10881);
 ```
 
 ### Listing Companies
@@ -146,16 +166,16 @@ The following models are provided by this package:
 |  | Description |
 | --- | --- |
 | `spire.company.Company` | [Company](docs/company.md) |
-| `spire.customer.Customer` | Customer |
-| `spire.employee.Employee` | Employee |
+| `spire.customer.Customer` | [Customer](docs/customer.md) |
+| `spire.employee.Employee` | [Employee](docs/employee.md) |
 | `spire.gl.GLAccount` | GL Account |
 | `spire.gl.GLTransaction` | GL Transaction |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
-| `spire.inventory.Inventory` | Inventory |
+| `spire.inventory.Inventory` | [Inventory](docs/inventory.md) |
 | `spire.inventory.PriceMatrix` | Price Matrix |
 | `spire.job.Job` | Job |
-| `spire.paymentMethod.PaymentMethod` | Payment Method |
-| `spire.paymentTerms.PaymentTerms` | Payment Terms |
+| `spire.paymentMethod.PaymentMethod` | [Payment Method](docs/payment_method.md) |
+| `spire.paymentTerms.PaymentTerms` | [Payment Terms](docs/payment_terms.md) |
 | `spire.payroll.Timecard` | Timecard |
 | `spire.production.ProductionHistory` | Production History |
 | `spire.production.ProductionOrder` | Production Order |
@@ -164,9 +184,9 @@ The following models are provided by this package:
 | `spire.purchasing.PurchaseOrder` | Purchase Order |
 | `spire.sales.SalesHistory` | Sales History |
 | `spire.sales.SalesOrder` | Sales Order |
-| `spire.salesperson.Salesperson` | Salesperson |
-| `spire.territory.Territory` | Territory |
-| `spire.vendor.Vendor` | Vendor |
+| `spire.salesperson.Salesperson` | [Salesperson](docs/salesperson.md) |
+| `spire.territory.Territory` | [Territory](docs/territory.md) |
+| `spire.vendor.Vendor` | [Vendor](docs/vendor.md) |
 
 The create, read, update, delete (CRUD) functions are provided by the following
 methods on a Model instance:
