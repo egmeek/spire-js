@@ -1,6 +1,6 @@
 # GL
 
-## [GL Acccount](#gl-account)
+## [GL Account](#gl-account)
 
 A `GLAccount` object has the following attributes:
 
