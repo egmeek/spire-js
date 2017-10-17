@@ -68,7 +68,7 @@ A `PriceMatrix` model instance has the following properties:
 | `margin` | Decimal margin used when price rule is based on margin |
 | `vendorNo` | String indicating vendor criteria |
 | `created` | UTC timestamp indicating the time the price rule was created. |
-| `createdBy` | String indicating the initials of the user that created this
+| `createdBy` | String indicating the initials of the user that created this price rule |
 | `modified` | UTC timestamp indicating the time the price rule was last modified. |
 | `modifiedBy` | String indicating the initials of the user that last modified this price rule. |
 
@@ -86,3 +86,34 @@ A `SerialNumber` model instance has the following properties:
 | `unitCost` | Decimal indicating the unit cost for this serial in stock unit of measure |
 | `sellPrice` | Decimal indicating the serialized sell price for this serial |
 | `expiryDate` | Date indicating best before for this serial |
+
+# Inventory Adjustment
+
+An `InventoryAdjustment` model instance has the following properties:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the inventory adjustment or `null` if this is a new inventory adjustment |
+| `adjustmentNo` | Inventory adjustment user-facing key (string) |
+| `receiveMode` | Integer indicating the mode of this adjustment: `1` adjust, `2` transfer |
+| `date` | Date of inventory adjustment |
+| `referenceNo` | User entered reference string |
+| `created` | UTC timestamp indicating the time the adjustment was created. |
+| `createdBy` | String indicating the initials of the user that created this adjustment |
+| `modified` | UTC timestamp indicating the time the adjustment was last modified. |
+| `modifiedBy` | String indicating the initials of the user that last modified this adjustment |
+
+
+# Inventory Adjustment Item
+
+An `InventoryAdjustmentItem` model instance has the following properties:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the inventory adjustment item or `null` if this is a new item |
+| `description` | String describing the inventory item |
+| `receiveQty` | Decimal indicating the quantity of the adjustment |
+| `cost` | Decimal indicating the cost per unit of inventory |
+| `purchaseMeasure` | String indicating the unit of measure of the adjustment |
+| `inventory` | [`Inventory`](#inventory) model instance |
+| `serials` | Collection of [`SerialNumber`](#serial-number) model instances |

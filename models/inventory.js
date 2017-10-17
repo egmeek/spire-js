@@ -119,8 +119,65 @@ var SerialNumberList = base.Collection.extend({
 });
 
 
+var InventoryAdjustmentItem = base.State.extend({
+  props: {
+    id: 'any',
+    description: 'string',
+    receiveQty: 'decimal',
+    cost: 'decimal',
+    purchaseMeasure: 'string'
+  },
+
+  children: {
+    inventory: Inventory
+  },
+
+  collections: {
+    serials: SerialNumberList
+  }
+});
+
+
+var InventoryAdjustmentItemList = base.Collection.extend({
+  model: InventoryAdjustmentItem
+});
+
+
+var InventoryAdjustment = base.Model.extend({
+  endpoint: 'inventory/adjustments',
+  props: {
+    id: 'any',
+    adjustmentNo: 'string',
+    receiveMode: {
+      type: 'any',
+      values: [1, 3]
+    },
+    date: 'date',
+    referenceNo: 'string',
+    created: 'date',
+    createdBy: 'string',
+    modified: 'date',
+    modifiedBy: 'string'
+  },
+
+  collections: {
+    items: InventoryAdjustmentItemList
+  }
+});
+
+
+var InventoryAdjustmentList = base.RESTCollection.extend({
+  model: InventoryAdjustment,
+  endpoint: 'inventory/adjustments/',
+  indexes: ['adjustmentNo']
+});
+
+
 module.exports = {
   Inventory: Inventory,
+  InventoryAdjustment: InventoryAdjustment,
+  InventoryAdjustmentItem: InventoryAdjustmentItem,
+  InventoryAdjustmentList: InventoryAdjustmentList,
   InventoryList: InventoryList,
   PriceMatrix: PriceMatrix,
   PriceMatrixList: PriceMatrixList,

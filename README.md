@@ -84,9 +84,6 @@ The following collections are provided by this package:
 | `spire.paymentMethod.PaymentMethodList` | Payment Methods |
 | `spire.paymentTerms.PaymentTermsList` | Payment Terms |
 | `spire.payroll.TimecardList` | Timecards |
-| `spire.production.ProductionHistoryList` | Production History |
-| `spire.production.ProductionOrderList` | Production Orders |
-| `spire.production.ProductionTemplateList` | Production Templates |
 | `spire.purchasing.PurchaseHistoryList` | Purchase History |
 | `spire.purchasing.PurchaseOrderList` | Purchase Orders |
 | `spire.sales.SalesHistoryList` | Sales History |
@@ -185,16 +182,15 @@ The following models are provided by this package:
 | [`spire.gl.GLAccount`](docs/gl.md#gl-account) | GL Account |
 | [`spire.gl.GLTransaction`](docs/gl.md#gl-transaction) | GL Transaction |
 | [`spire.gl.GLTransactionItem`](docs/gl.md#gl-transaction-item) | GL Transaction Item |
-| `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
+| [`spire.inventory.InventoryAdjustment`](docs/inventory.md#inventory-adjustment) | Inventory Adjustment and Transfer |
+| [`spire.inventory.InventoryAdjustmentItem`](docs/inventory.md#inventory-adjustment-item)
+| Inventory Adjustment Item |
 | [`spire.inventory.Inventory`](docs/inventory.md#inventory) | Inventory |
 | [`spire.inventory.PriceMatrix`](docs/inventory.md#price-matrix) | Price Matrix |
 | [`spire.paymentMethod.PaymentMethod`](docs/payment_method.md) | Payment Method |
 | [`spire.paymentTerms.PaymentTerms`](docs/payment_terms.md) | Payment Terms |
 | [`spire.payroll.Timecard`](docs/payroll.md#timecard) | Timecard |
 | [`spire.payroll.TimecardEntry`](docs/payroll.md#timecard-entry) | Timecard Entry |
-| `spire.production.ProductionHistory` | Production History |
-| `spire.production.ProductionOrder` | Production Order |
-| `spire.production.ProductionTemplate` | Production Template |
 | [`spire.purchasing.PurchaseHistory`](docs/purchasing.md#purchase-history) | Purchase History |
 | [`spire.purchasing.PurchaseOrder`](docs/purchasing.md#purchase-order) | Purchase Order |
 | [`spire.purchasing.PurchaseOrderItem`](docs/purchasing.md#purchase-order-item) | Purchase Order Item |

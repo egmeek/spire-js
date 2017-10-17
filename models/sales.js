@@ -140,7 +140,8 @@ var SalesOrder = base.Model.extend({
 
 var SalesOrderList = base.RESTCollection.extend({
   model: SalesOrder,
-  endpoint: 'sales/orders/'
+  endpoint: 'sales/orders/',
+  indexes: ['orderNo']
 });
 
 
@@ -236,7 +237,8 @@ var SalesHistory = base.Model.extend({
 
 var SalesHistoryList = base.RESTCollection.extend({
   model: SalesHistory,
-  endpoint: 'sales/invoices/'
+  endpoint: 'sales/invoices/',
+  indexes: ['invoiceNo']
 });
 
 
