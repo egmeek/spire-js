@@ -78,8 +78,7 @@ A `SerialNumber` model instance has the following properties:
 
 |   | Returns |
 | --- | --- |
-| `id` | Integer primary key of the serial number or `null` if this is a new
-serial number |
+| `id` | Integer primary key of the serial number or `null` if this is a new serial number |
 | `serialNumber` | Serial number string |
 | `whse` | Warehouse string |
 | `partNo` | Part no string |
