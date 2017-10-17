@@ -85,7 +85,8 @@ var GLTransaction = base.Model.extend({
 
 var GLTransactionList = base.RESTCollection.extend({
   endpoint: 'gl/transactions/',
-  model: GLTransaction
+  model: GLTransaction,
+  indexes: ['transNo']
 });
 
 

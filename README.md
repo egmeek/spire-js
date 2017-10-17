@@ -140,7 +140,7 @@ always provide a complete representation. This is more common with complex
 objects like orders, and is generally to preserve the performance of the list.
 To "inflate" the Model instance you can call `fetch()` on each one (which
 dispatches a request to the server for the complete representation) and will
-populate the missing attributes.
+populate the undefined attributes.
 
 Alternately, you can get a specific record from the server using the
 `getOrFetch` method on the collection (model instances returned will be fully
@@ -183,7 +183,7 @@ The following models are provided by this package:
 | `spire.customer.Customer` | [Customer](docs/customer.md) |
 | `spire.employee.Employee` | [Employee](docs/employee.md) |
 | `spire.gl.GLAccount` | [GL Account](docs/gl.md#gl-account) |
-| `spire.gl.GLTransaction` | GL Transaction |
+| `spire.gl.GLTransaction` | [GL Transaction](docs/gl.md#gl-transaction) |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
 | `spire.inventory.Inventory` | [Inventory](docs/inventory.md) |
 | `spire.inventory.PriceMatrix` | Price Matrix |

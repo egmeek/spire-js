@@ -1,6 +1,6 @@
 # GL
 
-## [GL Account](#gl-account)
+## [GL Account]
 
 A `GLAccount` object has the following attributes:
 
@@ -20,3 +20,32 @@ A `GLAccount` object has the following attributes:
 | `foreignCreditBalance` | Decimal credit balance in foreign currency or zero if this account has a foreign debit balance or is not a foreign account |
 | `allocation` | Boolean indicating if this account is an allocation account |
 | `segments` | Object describing segment structure of this account if GL chart is segmented |
+
+## [GL transaction]
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the GL transaction |
+| `transNo` | User-facing key (string) for this transation |
+| `date` | Transaction date |
+| `items` | Collection of [`GLTransactionItem`](#gl-transaction-item) instances |
+
+## [GL Transaction Item]
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the GL transaction item |
+| `recno` | Integer sequence of this item in the GL transaction collection |
+| `division` | String component of GL account key representing GL division |
+| `account` | [`GLAccount`](#gl-account) instance |
+| `reconcileDate` | Date transaction was reconciled with statement |
+| `reconcileFlag` | Boolean indication if this transaction has been reconciled |
+| `whereFrom` | String indicating module that created this transaction |
+| `memoWho` | String |
+| `memoKey` | String |
+| `memoTran` | String |
+| `baseDebitAmount` | Decimal debit amount in base currency |
+| `baseCreditAmount` | Decimal credit amount in base currency |
+| `foreignDebitAmount` | Decimal debit amount in foreign currency |
+| `foreignCreditAmount` | Decimal credit amount in foreign currency |
+| `exchangeRate` | Object indicating exchange `rate` and `method` for this transaction item |
