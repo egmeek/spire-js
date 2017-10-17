@@ -243,7 +243,7 @@ salesOrder.destroy({
 Change an attribute and update the object:
 
 ```javascript
-salesOrder.requiredDate = spire.utils.formatDate(new Date());
+salesOrder.requiredDate = new Date();
 salesOrder.save();
 ```
 
