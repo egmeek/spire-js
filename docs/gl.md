@@ -1,6 +1,6 @@
 # GL
 
-## [GL Account]
+## GL Account
 
 A `GLAccount` object has the following attributes:
 
@@ -21,7 +21,7 @@ A `GLAccount` object has the following attributes:
 | `allocation` | Boolean indicating if this account is an allocation account |
 | `segments` | Object describing segment structure of this account if GL chart is segmented |
 
-## [GL transaction]
+## GL transaction
 
 |   | Returns |
 | --- | --- |
@@ -30,7 +30,7 @@ A `GLAccount` object has the following attributes:
 | `date` | Transaction date |
 | `items` | Collection of [`GLTransactionItem`](#gl-transaction-item) instances |
 
-## [GL Transaction Item]
+## GL Transaction Item
 
 |   | Returns |
 | --- | --- |
