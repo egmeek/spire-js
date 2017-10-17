@@ -281,7 +281,9 @@ dec.format();
 The Spire API expects local date strings to be in the format 'YYYY-MM-DD' for
 communication with the server. The `spire.utils` namespace provides the
 `formatDate` function that will take a JavaScript Date object and serialize it
-into a string in the expected format.
+into a string in the expected format. This is mostly not required when working
+with collections and model objects; however, it can be helpful when building
+filter criteria.
 
 ```javascript
 spire.utils.formatDate(new Date());
