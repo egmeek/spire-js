@@ -7,6 +7,23 @@ var Inventory = require('./inventory').Inventory;
 var SerialNumberList = require('./inventory').SerialNumberList;
 
 
+var OrderSalesTax = base.State.extend({
+  props: {
+    code: 'string',
+    name: 'string',
+    shortName: 'string',
+    rate: 'decimal',
+    exemptNo: 'string',
+    total: 'decimal'
+  }
+});
+
+
+var OrderSalesTaxList = base.Collection.extend({
+  model: OrderSalesTax
+});
+
+
 var SalesOrderItem = base.State.extend({
   props: {
     id: 'any',
@@ -32,7 +49,10 @@ var SalesOrderItem = base.State.extend({
   },
 
   children: {
-    inventory: Inventory,
+    inventory: Inventory
+  },
+
+  collections: {
     serials: SerialNumberList
   }
 });
@@ -112,7 +132,8 @@ var SalesOrder = base.Model.extend({
 
   collections: {
     items: SalesOrderItemList,
-    payments: SalesOrderPaymentList
+    payments: SalesOrderPaymentList,
+    taxes: OrderSalesTaxList
   }
 });
 
@@ -123,9 +144,107 @@ var SalesOrderList = base.RESTCollection.extend({
 });
 
 
+var SalesHistoryPayment = base.State.extend({
+  props: {
+    id: 'any',
+    method: 'any',
+    amount: 'decimal'
+  }
+});
+
+
+var SalesHistoryPaymentList = base.Collection.extend({
+  model: SalesHistoryPayment
+});
+
+
+var SalesHistoryItem = base.State.extend({
+  props: {
+    id: 'any',
+    invoiceNo: 'string',
+    sequence: 'any',
+    whse: 'string',
+    partNo: 'string',
+    description: 'string',
+    comment: 'string',
+    orderQty: 'decimal',
+    committedQty: 'decimal',
+    backorderQty: 'decimal',
+    retailPrice: 'decimal',
+    unitPrice: 'decimal',
+    lineDiscountPct: 'decimal',
+    taxFlags: 'array',
+    sellMeasure: 'string',
+    extendedPriceOrdered: 'decimal',
+    extendedPriceCommitted: 'decimal'
+  },
+
+  children: {
+    inventory: Inventory
+  },
+
+  collections: {
+    serials: SerialNumberList
+  }
+});
+
+
+var SalesHistoryItemList = base.Collection.extend({
+  model: SalesHistoryItem
+});
+
+
+var SalesHistory = base.Model.extend({
+  endpoint: 'sales/invoices',
+  props: {
+    id: 'any',
+    invoiceNo: 'string',
+    orderNo: 'string',
+    division: 'string',
+    location: 'string',
+    profitCentre: 'string',
+    currency: 'string',
+    orderDate: 'date',
+    invoiceDate: 'date',
+    requiredDate: 'date',
+    customerPO: 'string',
+    fob: 'string',
+    referenceNo: 'string',
+    shippingCarrier: 'string',
+    shipDate: 'string',
+    trackingNo: 'string',
+    termsCode: 'string',
+    termsText: 'string',
+    freight: 'decimal',
+    subtotal: 'decimal',
+    total: 'decimal'
+  },
+
+  children: {
+    customer: Customer,
+    address: Address,
+    shippingAddress: Address,
+  },
+
+  collections: {
+    items: SalesHistoryItemList,
+    payments: SalesHistoryPaymentList,
+    taxes: OrderSalesTaxList
+  }
+});
+
+
+var SalesHistoryList = base.RESTCollection.extend({
+  model: SalesHistory,
+  endpoint: 'sales/invoices/'
+});
+
+
 module.exports = {
   SalesOrder: SalesOrder,
   SalesOrderList: SalesOrderList,
   SalesOrderItem: SalesOrderItem,
-  SalesOrderPayment: SalesOrderPayment
+  SalesOrderPayment: SalesOrderPayment,
+  SalesHistory: SalesHistory,
+  SalesHistoryList: SalesHistoryList
 };

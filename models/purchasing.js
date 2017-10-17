@@ -23,7 +23,10 @@ var PurchaseOrderItem = base.State.extend({
   },
 
   children: {
-    inventory: Inventory,
+    inventory: Inventory
+  },
+
+  collections: {
     serials: SerialNumberList
   }
 });

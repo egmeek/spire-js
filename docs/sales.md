@@ -37,6 +37,7 @@ A `SalesOrder` model instance has the following attributes:
 | `shippingAddress` | Shipping [`Address`](address.md) model instance |
 | `items` | Collection of [`SalesOrderItem`](#sales-order-item) model instances |
 | `payments` | Collection of [`SalesOrderPayment`](#sales-order-payment) model instances |
+| `taxes` | Collection of `OrderSalesTax` objects |
 
 ## Sales Order Item
 
@@ -64,6 +65,8 @@ A `SalesOrderItem` model instance has the following attributes:
 | `levyCode` | String indicating user-facing levy code to apply to this item |
 | `extendedPriceOrdered` | Decimal indicating the extended price of this item by ordered quantity |
 | `extendedPriceCommitted` | Decimal indicating the extended price of this item by shipped quantity |
+| `inventory` | [`Inventory`](inventory.md) model instance |
+| `serials` | Collection of [`SerialNumber`](inventory.md#serial-number) model instances |
 
 ## Sales Order Payment
 
@@ -77,3 +80,60 @@ A `SalesOrderPayment` model instance has the following attributes:
 | `authCode` | String indicating any authorization code from credit facilities |
 | `transNo` | String indicating user-facing GL transaction number that was recorded for this payment |
 | `layawayFlag` | Boolean indicating whether or not this payment was a layaway deposit |
+
+# Sales History
+
+A `SalesHistory` model instance has the following attributes:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the invoice |
+| `orderNo` | String indicating the user-facing order number |
+| `invoiceNo` | String indicating the user-facing invoice number |
+| `customerNo` | String indicating the user-facing customer number |
+| `status` | String indicating order status: `C` closed, `H` hold, `O` open, `L` layaway, `P` processed, `S` shipped |
+| `orderDate` | Date order was placed |
+| `invoiceDate` | Date order was converted to an invoice |
+| `requiredDate` | Date customer requires order |
+| `customerPO` | String indicating customer purchase order number |
+| `fob` | String indicating free on board contract terms |
+| `referenceNo` | String indicating user reference number on the order |
+| `shippingCarrier` | String indicating naming of shipping carrier/courier |
+| `shipDate` | Date indicating when goods were shipped |
+| `trackingNo` | String with order shipment tracking |
+| `termsCode` | String indicating user-facing key of order payment terms |
+| `termsText` | String describing invoice terms |
+| `freight` | Decimal indicating amount of freight on order |
+| `subtotal` | Decimal indicating order subtotal for items shipped (excludes taxes, freight, discounts, levies) |
+| `total` | Decimal indicating order total for items shipped |
+| `customer` | [`Customer`](customer.md) model instance |
+| `address` | Billing [`Address`](address.md) model instance |
+| `shippingAddress` | Shipping [`Address`](address.md) model instance |
+| `items` | Collection of [`SalesHistoryItem`](#sales-history-item) model instances |
+| `payments` | Collection of `SalesHistoryPayment` model instances |
+| `taxes` | Collection of `OrderSalesTax` objects |
+
+# Sales History Item
+
+A `SalesHistoryItem` model instance has the following attributes:
+
+|   | Returns |
+| --- | --- |
+| `id` | Integer primary key of the sales history item |
+| `whse` | Warehouse component of user-facing key of inventory associated with this item |
+| `partNo` | Part number compnent of user-facing key of inventory associated with this item |
+| `sequence` | Integer indicating order of items added to order |
+| `description` | String describing inventory or job header |
+| `comment` | String containing sales order item comments |
+| `orderQty` | Decimal quantity of inventory ordered |
+| `committedQty` | Decimal quantity of inventory committed from stock |
+| `backorderQty` | Decimal quantity of inventory backordered (not shipped) |
+| `unitPrice` | Decimal price of inventory per unit (used to calculate `extendedPriceCommitted` |
+| `retailPrice` | Decimal retail price of inventory per unit |
+| `lineDiscountPct` | Decimal discount percentage applied to this item (see also `discountable`) |
+| `taxFlags` | Array of booleans indicating whether or not order taxes apply to this item |
+| `sellMeasure` | User-facing unit of measure code for items sales measure |
+| `extendedPriceOrdered` | Decimal indicating the extended price of this item by ordered quantity |
+| `extendedPriceCommitted` | Decimal indicating the extended price of this item by shipped quantity |
+| `inventory` | [`Inventory`](inventory.md) model instance |
+| `serials` | Collection of [`SerialNumber`](inventory.md#serial-number) model instances |
