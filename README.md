@@ -183,8 +183,7 @@ The following models are provided by this package:
 | [`spire.gl.GLTransaction`](docs/gl.md#gl-transaction) | GL Transaction |
 | [`spire.gl.GLTransactionItem`](docs/gl.md#gl-transaction-item) | GL Transaction Item |
 | [`spire.inventory.InventoryAdjustment`](docs/inventory.md#inventory-adjustment) | Inventory Adjustment and Transfer |
-| [`spire.inventory.InventoryAdjustmentItem`](docs/inventory.md#inventory-adjustment-item)
-| Inventory Adjustment Item |
+| [`spire.inventory.InventoryAdjustmentItem`](docs/inventory.md#inventory-adjustment-item) | Inventory Adjustment Item |
 | [`spire.inventory.Inventory`](docs/inventory.md#inventory) | Inventory |
 | [`spire.inventory.PriceMatrix`](docs/inventory.md#price-matrix) | Price Matrix |
 | [`spire.paymentMethod.PaymentMethod`](docs/payment_method.md) | Payment Method |
