@@ -9,7 +9,7 @@ var SerialNumberList = require('./inventory').SerialNumberList;
 
 var OrderSalesTax = base.State.extend({
   props: {
-    code: 'string',
+    code: 'any',
     name: 'string',
     shortName: 'string',
     rate: 'decimal',
