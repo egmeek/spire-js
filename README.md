@@ -184,6 +184,7 @@ The following models are provided by this package:
 | [`spire.employee.Employee`](docs/employee.md) | Employee |
 | [`spire.gl.GLAccount`](docs/gl.md#gl-account) | GL Account |
 | [`spire.gl.GLTransaction`](docs/gl.md#gl-transaction) | GL Transaction |
+| [`spire.gl.GLTransactionItem`](docs/gl.md#gl-transaction-item) | GL Transaction Item |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
 | [`spire.inventory.Inventory`](docs/inventory.md#inventory) | Inventory |
 | [`spire.inventory.PriceMatrix`](docs/inventory.md#price-matrix) | Price Matrix |
@@ -194,7 +195,7 @@ The following models are provided by this package:
 | `spire.production.ProductionHistory` | Production History |
 | `spire.production.ProductionOrder` | Production Order |
 | `spire.production.ProductionTemplate` | Production Template |
-| `spire.purchasing.PurchaseHistory` | Purchase History |
+| [`spire.purchasing.PurchaseHistory`](docs/purchasing.md#purchase-history) | Purchase History |
 | [`spire.purchasing.PurchaseOrder`](docs/purchasing.md#purchase-order) | Purchase Order |
 | [`spire.purchasing.PurchaseOrderItem`](docs/purchasing.md#purchase-order-item) | Purchase Order Item |
 | `spire.sales.SalesHistory` | Sales History |
