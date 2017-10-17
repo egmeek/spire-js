@@ -116,7 +116,12 @@ salesOrders.fetch({
   success: function(collection, response, options) {
     // Actions to perform on success
     collection.map(function(order) {
-      console.log(order);
+      // 'Inflate' order
+      order.fetch({
+        success: function(order) {
+          console.log(order);
+        }
+      });
     });
   },
 
@@ -129,8 +134,17 @@ salesOrders.fetch({
 });
 ```
 
+Model instances populated during a fetch operation may not have all of their
+attributes defined because the collection endpoint on the Spire server does not
+always provide a complete representation. This is more common with complex
+objects like orders, and is generally to preserve the performance of the list.
+To "inflate" the Model instance you can call `fetch()` on each one (which
+dispatches a request to the server for the complete representation) and will
+populate the missing attributes.
+
 Alternately, you can get a specific record from the server using the
-`getOrFetch` method on the collection:
+`getOrFetch` method on the collection (model instances returned will be fully
+inflated):
 
 ```javascript
 salesOrders.getOrFetch(1, function(err, model) {
@@ -144,8 +158,8 @@ salesOrders.getOrFetch(1, function(err, model) {
 
 Once a collection is populated with model instances (following a successful
 `fetch`) you can `get` a specific ID from the collection using either its
-primary key (usually 'id'), or by specifying a user facing identifier like
-'orderNo' (this may not work in all cases).
+primary key (usually 'id'), or by specifying a user-facing key like `orderNo`
+(this may not work in all cases).
 
 ```javascript
 salesOrders.get(1);
