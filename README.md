@@ -168,7 +168,7 @@ The following models are provided by this package:
 | `spire.company.Company` | [Company](docs/company.md) |
 | `spire.customer.Customer` | [Customer](docs/customer.md) |
 | `spire.employee.Employee` | [Employee](docs/employee.md) |
-| `spire.gl.GLAccount` | GL Account |
+| `spire.gl.GLAccount` | [GL Account](docs/gl.md#gl-account) |
 | `spire.gl.GLTransaction` | GL Transaction |
 | `spire.inventory.InventoryAdjustment` | Inventory Adjustment and Transfer |
 | `spire.inventory.Inventory` | [Inventory](docs/inventory.md) |

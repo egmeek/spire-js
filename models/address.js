@@ -58,7 +58,8 @@ var Address = base.State.extend({
 
 
 var AddressList = base.Collection.extend({
-  model: Address
+  model: Address,
+  indexes: ['shipId']
 });
 
 

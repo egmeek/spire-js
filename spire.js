@@ -44,6 +44,7 @@ module.exports = app;
 var company = require('./models/company');
 var customer = require('./models/customer');
 var employee = require('./models/employee');
+var gl = require('./models/gl');
 var inventory = require('./models/inventory');
 var paymentMethod = require('./models/payment_method.js');
 var paymentTerms = require('./models/payment_terms.js');
@@ -56,6 +57,7 @@ assign(app, {
   company: company,
   customer: customer,
   employee: employee,
+  gl: gl,
   inventory: inventory,
   paymentMethod: paymentMethod,
   paymentTerms: paymentTerms,

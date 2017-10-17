@@ -5,7 +5,7 @@ A `Customer` model instance has the following attributes:
 |   | Returns |
 | --- | --- |
 | `id` | Integer primary key of the customer or `null` if this is a new customer. |
-| `name` | Returns the name of the customer. |
+| `name` | Customer's name |
 | `customerNo` | Returns the user-facing key of the customer. (indexed field) |
 | `code` | See `customerNo` (indexed field) |
 | `hold` | Boolean indicating whether or not this customer is on hold. |
@@ -13,7 +13,7 @@ A `Customer` model instance has the following attributes:
 | `reference` | Reference field. |
 | `address` | Returns [`Address`](address.md) object. |
 | `shippingAddresses` | Returns array of [`Address`](address.md) objects. |
-| `paymentTerms` | Returns ['PaymentTerms`](payment_terms.md) object. |
+| `paymentTerms` | Returns [`PaymentTerms`](payment_terms.md) object. |
 | `applyFinanceCharges` | Boolean indicating whether or not to apply finance charges to this customer. |
 | `foregroundColor` | Base 10 integer indicating a custom RGBA text color. |
 | `backgroundColor` | Base 10 integer indicating a custom RGBA background color. |
