@@ -247,6 +247,27 @@ salesOrder.requiredDate = new Date();
 salesOrder.save();
 ```
 
+#### Example Sales Order Creation
+
+```javascript
+// Create an order instance
+var salesOrder = new spire.sales.SalesOrder();
+
+// Create a customer
+var customer = new spire.customer.Customer();
+customer.name = 'Arya Stark';
+customer.save();
+salesOrder.customer = customer;
+
+// Create an item
+var item = new spire.sales.SalesOrderItem();
+item.inventory.whse = '00';
+item.inventory.partNo = 'TEST';  // partNo must exist in whse
+salesOrder.items.add(item);
+
+salesOrder.save();
+```
+
 More information about working with individual model objects can be found here:
 
 [ampersand-model](https://ampersandjs.com/docs/#ampersand-model)
@@ -281,9 +302,9 @@ dec.format();
 The Spire API expects local date strings to be in the format 'YYYY-MM-DD' for
 communication with the server. The `spire.utils` namespace provides the
 `formatDate` function that will take a JavaScript Date object and serialize it
-into a string in the expected format. This is mostly not required when working
-with collections and model objects; however, it can be helpful when building
-filter criteria.
+into a string in the expected format. This is generally not required when
+working with collections and model objects; however, it can be helpful when
+building filter criteria.
 
 ```javascript
 spire.utils.formatDate(new Date());
