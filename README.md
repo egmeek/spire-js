@@ -7,20 +7,20 @@ written in JavaScript.
 
 Install the package with:
 
-    npm install git+https://git@github.com/spiresystems/spire-js
+    npm install spire-js
 
 ## Usage
 
 ### Import the Spire package
 
 ```javascript
-var spire = require('spire');
+var spire = require('spire-js');
 ```
 
 Or if your JavaScript environment supports ES6:
 
 ```javascript
-import spire from 'spire';
+import spire from 'spire-js';
 ```
 
 ### Connect to Your Spire Server
