@@ -45,7 +45,7 @@ var Customer = base.Model.extend({
 
   children: {
     address: Address,
-    //shippingAddresses: AddressList,
+    shippingAddresses: AddressList,
     paymentTerms: PaymentTerms
   }
 });
