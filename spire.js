@@ -2,6 +2,14 @@
 
 var Events = require('ampersand-events');
 var assign = require('lodash.assign');
+global.Buffer = global.Buffer || require('buffer').Buffer;
+
+
+if(typeof btoa === 'undefined') {
+  global.btoa = function(str) {
+    return Buffer.from(str).toString('base64');
+  };
+}
 
 
 var app = {
@@ -17,23 +25,23 @@ var app = {
       return;
     }
 
-    this.url = 'https://' + address + ':' + port + '/api/v1/companies';
+    this.baseUrl = this.url = 'https://' + address + ':' + port + '/api/v2';
   },
 
-  authenticate: function(company, username, password) {
-    if(company.name === undefined) {
-      this.url += '/' + company;
-    } else {
-      this.url += '/' + company.name;
+  authenticate: function(username, password) {
+    this.authorization = 'Basic ' + btoa([username, password].join(':'));
+  },
+
+  setCompany: function(company) {
+    var name = company.name == undefined ? company : company.name;
+
+    if(this.url.indexOf('companies') != -1) {
+      this.url = this.url.split('/companies/')[0];
     }
 
-    this.auth_info = [username, password];
-  },
-
-  authorization: function() {
-    if(this.auth_info === undefined)
-      return;
-    return 'Basic ' + btoa(this.auth_info.join(':'));
+    if(name) {
+      this.url += '/companies/' + name;
+    }
   }
 };
 

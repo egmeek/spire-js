@@ -1,6 +1,6 @@
 {
   "name": "spire-js",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Spire JavaScript Client",
   "repository": {
     "type": "git",
@@ -13,12 +13,15 @@
   "author": "Spire Systems Inc.",
   "license": "MIT",
   "dependencies": {
-    "ampersand-collection": "^2.0.1",
+    "ampersand-collection": "^2.0.2",
     "ampersand-collection-lodash-mixin": "^4.0.0",
     "ampersand-events": "^2.0.2",
-    "ampersand-model": "^8.0.0",
+    "ampersand-model": "^8.0.1",
     "ampersand-rest-collection": "^6.0.0",
     "big.js": "^4.0.2",
     "lodash.assign": "^4.2.0"
+  },
+  "devDependencies": {
+    "chokidar": "2.0.4"
   }
 }

@@ -16,7 +16,7 @@ var Decimal = require('../types').Decimal;
 var ajaxConfig = function() {
   return {
     headers: {
-      'Authorization': api.authorization()
+      'Authorization': api.authorization
     }
   }
 };
@@ -100,7 +100,11 @@ module.exports.Model = Model.extend(lodashMixin, stateTypesMixin, {
   ajaxConfig: ajaxConfig,
 
   url: function() {
-    return [api.url, this.endpoint, this.getId()].join('/');
+    return [
+      this.endpoint == 'companies' ? api.baseUrl : api.url,
+      this.endpoint,
+      this.getId()
+    ].join('/');
   },
 
   destroy: function (options) {
@@ -201,7 +205,10 @@ module.exports.Model = Model.extend(lodashMixin, stateTypesMixin, {
 
 module.exports.RESTCollection = RESTCollection.extend({
   url: function() {
-    return api.url + '/' + this.endpoint;
+    return [
+      this.endpoint == 'companies/' ? api.baseUrl : api.url,
+      this.endpoint
+    ].join('/');
   },
 
   ajaxConfig: ajaxConfig,

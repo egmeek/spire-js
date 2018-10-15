@@ -13,7 +13,7 @@ var Inventory = base.Model.extend({
     description: 'string',
     type: {
       type: 'string',
-      values: ['N', 'V', 'M', 'K', 'R']
+      values: ['N', 'V', 'M', 'K', 'R', 'C']
     },
     status: {
       type: 'any',
@@ -154,6 +154,10 @@ var InventoryAdjustment = base.Model.extend({
     },
     date: 'date',
     referenceNo: 'string',
+    sourceWhse: 'string',
+    sourceLocation: 'string',
+    destinationWhse: 'string',
+    destinationLocation: 'string',
     created: 'date',
     createdBy: 'string',
     modified: 'date',

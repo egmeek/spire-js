@@ -3,7 +3,7 @@
 var base = require('./base');
 
 var Company = base.Model.extend({
-  endpoint: '',
+  endpoint: 'companies',
   props: {
     name: 'string',
     description: 'string',
@@ -19,11 +19,7 @@ var Company = base.Model.extend({
 var CompanyList = base.RESTCollection.extend({
   model: Company,
   mainIndex: 'name',
-  endpoint: '',
-
-  parse: function(response, options) {
-    return response.companies;
-  }
+  endpoint: 'companies/'
 });
 
 

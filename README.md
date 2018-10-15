@@ -38,6 +38,14 @@ can pass the port to `connectServer`:
 spire.connectServer('127.0.0.1', 10881);
 ```
 
+### Authenticate a User
+
+Supply a username and password for a Spire account on the connected server:
+
+```javascript
+spire.authenticate(username, password);
+```
+
 ### Listing Companies
 
 To list companies that have been setup on your Spire server, create a
@@ -57,13 +65,14 @@ The `CompanyList` collection will be populated with instances of `Company` for
 each company that is configured on your server. See [Company](docs/company.md)
 for details about the attributes of a `Company` object.
 
-### Authenticate a User
+### Setting Company
 
-Provide a `Company` instance obtained above, or a company name (`string`) as the
-company argument here, followed by a username and password supplied by a user:
+Requests for resources owned by a particular company require the company to be
+set on your Spire API instance prior to using them. Provide a `Company` instance
+obtained above, or a company name (`string`) as the company argument here:
 
 ```javascript
-spire.authenticate(company, username, password);
+spire.setCompany('inspire');
 ```
 
 ### Working With Collections
