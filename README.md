@@ -38,6 +38,13 @@ can pass the port to `connectServer`:
 spire.connectServer('127.0.0.1', 10881);
 ```
 
+#### Connections from Server Environment (Node.js)
+
+For Spire Server 3.2 and earlier using a self-signed certificate you will need
+to disable certificate validation:
+
+    export NODE_TLS_REJECT_UNAUTHORIZED=0
+
 ### Authenticate a User
 
 Supply a username and password for a Spire account on the connected server:
@@ -224,7 +231,7 @@ To load a specific object by ID:
 
 ```javascript
 var salesOrder = new spire.sales.SalesOrder({id: 1});
-SalesOrder.fetch({
+salesOrder.fetch({
   success: function() {
     console.log('Successfully loaded object');
   },
